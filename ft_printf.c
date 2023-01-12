@@ -1,17 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.cbak                                     :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chris <chris@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/08 14:44:31 by chris             #+#    #+#             */
-/*   Updated: 2023/01/12 16:43:59 by chris            ###   ########.fr       */
+/*   Updated: 2023/01/12 19:13:08 by chris            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // This function ft_printf prints out the input arguments.
 // Return: Return the amout if printed chars as int.
+
 
 #include "ft_printf.h"
 

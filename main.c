@@ -31,6 +31,10 @@ int	main()
 	printf(" %X \n", 29);
 	ft_printf("\ntest 9  - percent\nvalue is %%\t");
 	printf("value is %%\n");
+
+	ft_printf("\ntest 10  - plus\nvalue is %+i\t", a);
+	printf("value is %+i\n", a);
+
 	return 0;
 }
 

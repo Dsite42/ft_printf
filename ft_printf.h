@@ -6,7 +6,7 @@
 /*   By: chris <chris@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 14:57:38 by chris             #+#    #+#             */
-/*   Updated: 2023/01/12 16:37:03 by chris            ###   ########.fr       */
+/*   Updated: 2023/01/12 17:54:02 by chris            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <stddef.h>
 # include <unistd.h>
 # include <stdarg.h>
-# include "libft.h"
+# include "libft/libft.h"
 
 // This function ft_putnbr_base prints a number by converting it to an other 
 // base system.
