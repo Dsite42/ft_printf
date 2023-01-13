@@ -6,7 +6,7 @@
 /*   By: chris <chris@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 17:28:53 by chris             #+#    #+#             */
-/*   Updated: 2023/01/12 13:37:02 by chris            ###   ########.fr       */
+/*   Updated: 2023/01/13 14:26:24 by chris            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,27 +16,27 @@
 
 #include "ft_printf.h"
 
-void	ft_putnbr_base(long double nb, char *base, size_t *cnt_output)
+void	ft_putnbr_base(long double nb, char *base, size_t *cnt_out)
 {
 	long double	strlen;
 
 	strlen = ft_strlen(base);
 	if (nb < strlen && nb >= 0)
 	{
-		ft_put_single(base[(long)nb], cnt_output);
+		ft_put_single(base[(long)nb], cnt_out);
 	}
 	else if (nb >= strlen)
 	{
-		ft_putnbr_base(nb / strlen, base, cnt_output);
-		ft_put_single(base[(unsigned long)nb % (unsigned long)strlen], cnt_output);
+		ft_putnbr_base(nb / strlen, base, cnt_out);
+		ft_put_single(base[(unsigned long)nb % (unsigned long)strlen], cnt_out);
 	}
 	else if (ft_strncmp("0123456789", base, 16) == 0)
 	{
-		ft_put_single('-', cnt_output);
-		ft_putnbr_base(-nb, base, cnt_output);
+		ft_put_single('-', cnt_out);
+		ft_putnbr_base(-nb, base, cnt_out);
 	}	
 	else if (ft_strncmp("0123456789abcdef", base, 16) == 0)
-		ft_putnbr_base(-nb, base, cnt_output);
+		ft_putnbr_base(-nb, base, cnt_out);
 	else
-		ft_putnbr_base((unsigned int)nb, base, cnt_output);
+		ft_putnbr_base((unsigned int)nb, base, cnt_out);
 }

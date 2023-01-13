@@ -6,7 +6,7 @@
 /*   By: chris <chris@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/08 14:44:31 by chris             #+#    #+#             */
-/*   Updated: 2023/01/12 19:19:06 by chris            ###   ########.fr       */
+/*   Updated: 2023/01/13 14:42:30 by chris            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "ft_printf_bonus.h"
 
-static int	check_format(const char **fmt, char *conv, char *flags)
+static int	check_flags(const char **fmt, char *conv, char *flags)
 {
 	char	*ref_flags;
 	char	*ref_conversions;
@@ -32,7 +32,7 @@ static int	check_format(const char **fmt, char *conv, char *flags)
 		*fmt = *fmt + 1;
 		i++;
 	}
-	if (ft_strchr(ref_conversions, **fmt) == NULL) // sollte weg können, da zwei compiler error, wenn nach einem % kein ref_conversionzeichen folgt.
+	if (ft_strchr(ref_conversions, **fmt) == NULL)
 	{
 		while (ft_strchr(ref_conversions, **fmt) == NULL)
 		{
@@ -43,7 +43,6 @@ static int	check_format(const char **fmt, char *conv, char *flags)
 	*conv = **fmt;
 	return (0);
 }
-
 
 static void	print_hex(va_list *args, char conv, char *flags, size_t *cnt_out)
 {
@@ -95,18 +94,18 @@ static void	print_csidu(va_list *args, char conv, char *flags, size_t *cnt_out)
 static void	f_conversion(const char **fmt, va_list *args,
 	char *flags, size_t *cnt_out)
 {
-	int		isformatok;
+	int		isflagok;
 	char	conv;
 
 	if (*(*fmt + 1) == '\0')
 		return ;
 	*fmt = *fmt + 1;
-	isformatok = !check_format(fmt, &conv, flags);
-	if (isformatok == 0 && **fmt != '\0')
+	isflagok = !check_flags(fmt, &conv, flags);
+	if (isflagok == 0 && **fmt != '\0')
 	{
 		ft_put_single(' ', cnt_out);
 	}
-	if (isformatok == 1)
+	if (isflagok == 1)
 	{
 		if (conv == 'x' || conv == 'X' || conv == 'p')
 			print_hex(args, conv, flags, cnt_out);

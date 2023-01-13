@@ -6,7 +6,7 @@
 /*   By: chris <chris@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 19:11:11 by chris             #+#    #+#             */
-/*   Updated: 2023/01/12 13:24:31 by chris            ###   ########.fr       */
+/*   Updated: 2023/01/13 14:42:52 by chris            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,18 @@
 
 void	ft_put_str(const char *str, size_t *cnt_out)
 {
-	while (*str != '\0')
+	if (str == NULL)
 	{
-		write(1, str, 1);
-		*cnt_out = *cnt_out + 1;
-		str++;
+		write(1, "(null)", 6);
+		*cnt_out = *cnt_out + 6;
+	}
+	else
+	{
+		while (*str != '\0')
+		{
+			write(1, str, 1);
+			*cnt_out = *cnt_out + 1;
+			str++;
+		}
 	}
 }

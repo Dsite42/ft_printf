@@ -6,12 +6,12 @@
 /*   By: chris <chris@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 14:57:38 by chris             #+#    #+#             */
-/*   Updated: 2023/01/12 17:54:02 by chris            ###   ########.fr       */
+/*   Updated: 2023/01/13 14:34:22 by chris            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFTPRINTF_H
-# define LIBFTPRINTF_H
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
 # include <strings.h>
 # include <stdlib.h>
@@ -36,6 +36,5 @@ void	ft_put_str(const char *str, size_t *cnt_out);
 
 // This function ft_printf prints out the input arguments.
 // Return: Return the amout if printed chars as int.
-int	ft_printf(const char *fmt, ...);
-
+int		ft_printf(const char *fmt, ...);
 #endif

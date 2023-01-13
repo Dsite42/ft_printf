@@ -6,17 +6,16 @@
 /*   By: chris <chris@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/08 14:44:31 by chris             #+#    #+#             */
-/*   Updated: 2023/01/12 19:13:08 by chris            ###   ########.fr       */
+/*   Updated: 2023/01/13 14:38:02 by chris            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // This function ft_printf prints out the input arguments.
 // Return: Return the amout if printed chars as int.
 
-
 #include "ft_printf.h"
 
-static int	print_conversion(va_list *args, char conversion, size_t *cnt_out)
+static void	print_conversion(va_list *args, char conversion, size_t *cnt_out)
 {
 	va_list	dest;
 
@@ -42,7 +41,6 @@ static int	print_conversion(va_list *args, char conversion, size_t *cnt_out)
 		ft_putnbr_base((unsigned long long)va_arg(*args, unsigned long long),
 			"0123456789abcdef", cnt_out);
 	}
-	return (0);
 }
 
 int	ft_printf(const char *fmt, ...)
